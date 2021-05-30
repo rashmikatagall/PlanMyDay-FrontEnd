@@ -1,0 +1,43 @@
+
+<div class="container">
+<h1 style="color:darkblue"> {{ date }} </h1>
+<br>
+
+<div>
+  <h2>
+    <input type="text" [(ngModel)]="taskName"> 
+    <button class="btn-sm"  background-color="color:black" (click)="addNewTask(taskName)">Add New Task</button>
+  </h2>
+</div>
+
+<br>
+<br>
+<div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Date</th>
+          <th scope="col">Task</th>
+          <th scope="col">Status</th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of tasks; index as i">
+                <td>{{ i+1 }}</td>
+                <td>{{ task.date }}</td>
+                <td>{{ task.taskName }}</td>
+                <td>
+                  <app-task [isDone]="task.done" (taskDone)="oneTaskCompleted(true,task)"></app-task>
+                </td>
+                <td> 
+                    <button type="button" class="btn btn-default btn-sm" (click)="deleteTask(task)">
+                    <span class="glyphicon glyphicon-remove"></span> Remove 
+                  </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+  </div>

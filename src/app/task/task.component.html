@@ -1,0 +1,7 @@
+<div *ngIf="isDone; then done else notdone"></div>
+<ng-template #done>
+    <span class="glyphicon glyphicon-ok" style='color: green'></span>
+</ng-template>
+<ng-template #notdone>
+    <input type="checkbox" [checked]="isDone" (change)="taskCompleted($event)">
+</ng-template>

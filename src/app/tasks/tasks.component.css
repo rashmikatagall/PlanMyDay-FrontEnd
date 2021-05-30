@@ -1,0 +1,16 @@
+.shadowbox {
+    width : 50%;
+    border: 1px solid #333;
+    padding: 8px 12px;
+    align-self: center;
+  }
+
+  .container{
+    border: 1px solid #333;
+    width : 50%;
+    align-self: center;
+    box-shadow: 4px 4px 2px #444;
+    background-color: dimgrey;
+    text-align: center;
+    padding: 8px 12px;
+  }
